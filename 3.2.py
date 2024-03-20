@@ -9,7 +9,7 @@ print(motorcycles)
 
 # 3.2.2 在列表中添加元素
 # 列表实例.append(
-#     待添加的元素<>: 不接收关键字实参 | 无默认值)
+#     待添加的元素<>: 仅限位置实参 | 无默认值)
 # 在列表实例的末尾添加元素，原列表实例改变
 motorcycles.append("honda")
 print(motorcycles)
@@ -21,8 +21,8 @@ motorcycles.append("yamaha")
 motorcycles.append("suzuki")
 print(motorcycles)
 # 列表实例.insert(
-#     索引<整型数>: 不接收关键字实参 | 无默认值,
-#     新元素值<>: 不接收关键字实参 | 无默认值)
+#     索引<整型数>: 仅限位置实参 | 无默认值,
+#     新元素值<>: 仅限位置实参 | 无默认值)
 # 在列表实例的对应索引处插入新元素，原列表实例改变，原列表实例中该索引及其后的元素索引加一（后移一位）
 motorcycles.insert(0, "ducati")
 print(motorcycles)
@@ -43,7 +43,7 @@ print(motorcycles)
 motorcycles = ["honda", "yamaha", "suzuki"]
 print(motorcycles)
 # 列表实例.pop(
-#     索引<整型数>: 不接收关键字实参 | -1: 最后一个元素)
+#     索引<整型数>: 仅限位置实参 | -1: 最后一个元素)
 # 返回列表实例中对应索引处的元素，原列表实例删除该元素，其后元素索引减一（前移一位）
 popped_motorcycle = motorcycles.pop()
 print(motorcycles)
@@ -59,7 +59,7 @@ print(motorcycles)
 motorcycles = ["honda", "yamaha", "suzuki", "ducati"]
 print(motorcycles)
 # 列表实例.remove(
-#     表达式<>: 不接收关键字实参 | 无默认值)
+#     表达式<>: 仅限位置实参 | 无默认值)
 # 删除原列表实例中第一个等于该表达式的值的元素，原列表实例改变，原列表实例中该值后的元素索引减一（前移一位）
 # 原列表实例中没有等于该表达式的值的元素时报错
 motorcycles.remove("ducati")
