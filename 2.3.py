@@ -47,7 +47,7 @@ print("Language:\n\tPython\n\tC\n\tJavaScript")
 favorite_language = "python "
 print("'" + favorite_language + "'")
 # 字符串实例.rstrip(
-#     待移除的末尾字符<字符串>: 不接收关键字实参 | None: 空白（空格、制表符和换行符等）)
+#     待移除的末尾字符<字符串>: 仅限位置实参 | None: 空白（空格、制表符和换行符等）)
 # 返回删除末尾所有指定字符直到末尾不为该字符的字符串实例，原字符串实例不变
 print("'" + favorite_language.rstrip() + "'")
 print("'" + favorite_language + "'")
@@ -59,11 +59,11 @@ favorite_language = " python "
 print("'" + favorite_language.rstrip() + "'")
 # 删除开头空白
 # 字符串实例.lstrip(
-#     待移除的开头字符<字符串>: 不接收关键字实参 | None: 空白（空格、制表符和换行符等）)
+#     待移除的开头字符<字符串>: 仅限位置实参 | None: 空白（空格、制表符和换行符等）)
 # 返回删除开头所有指定字符直到开头不为该字符的字符串实例，原字符串实例不变
 print("'" + favorite_language.lstrip() + "'")
 # 字符串实例.strip(
-#     待移除的两端字符<字符串>: 不接收关键字实参 | None: 空白（空格、制表符和换行符等）)
+#     待移除的两端字符<字符串>: 仅限位置实参 | None: 空白（空格、制表符和换行符等）)
 # 返回删除两端所有指定字符直到两端不为该字符的字符串实例，原字符串实例不变
 print("'" + favorite_language.strip() + "'")
 
