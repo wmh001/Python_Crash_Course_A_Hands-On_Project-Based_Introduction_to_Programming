@@ -14,7 +14,7 @@ for value in range(1, 6):
 # 4.3.2 使用range()创建数字列表
 # list(
 #     待转化对象<列表/元组/字典/字符串/其他某些可迭代对象>: 仅限位置实参; 待转化对象为字典时，返回的列表的元素为字典键 | [])
-# 返回元素和顺序与待转化对象相同的列表
+# 返回元素和顺序与待转化对象相同的列表实例
 numbers = list(range(1, 6))
 print(numbers)
 even_numbers = list(range(2, 11, 2))
@@ -54,6 +54,6 @@ print(sum(digits))
 # 4.3.4 列表解析
 # 将for循环与创建新元素的代码合并为一行
 # [计算元素的表达式 for 循环变量 in 可迭代对象]
-# 返回元素按照表达式和循环变量依次计算的列表
+# 返回元素按照表达式和循环变量依次计算的列表实例
 squares = [value**2 for value in range(1, 11)]
 print(squares)
