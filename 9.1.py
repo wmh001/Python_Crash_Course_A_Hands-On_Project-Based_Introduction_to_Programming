@@ -58,11 +58,11 @@ class Dog:
 # 返回新创建的该类的实例
 # 通常实例名首字母小写
 my_dog = Dog("willie", 6)
-# 实例名.属性名
+# 实例.属性
 # 返回实例的属性
 print("My dog's name is " + my_dog.name.title() + ".")
 print("My dog is " + str(my_dog.age) + " years old.")
-# 实例名.方法名(除self参数列表)
+# 实例.方法(除self参数列表)
 # 调用实例方法
 my_dog.sit()
 my_dog.roll_over()
