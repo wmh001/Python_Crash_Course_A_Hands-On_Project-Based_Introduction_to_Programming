@@ -44,7 +44,7 @@ p.make_pizza(12, "mushrooms", "green peppers", "extra cheese")
 
 # 8.6.5 导入模块中的所有函数
 # from 模块名 import *
-# 导入模块中的所有函数
+# 导入模块中的除以单下划线和双下划线开头的函数外的所有函数
 from pizza8_6 import *
 
 print("5")
