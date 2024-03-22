@@ -6,7 +6,7 @@
 import pizza8_6
 
 # 模块名.函数名(参数列表)
-# 调用模块中的函数
+# 调用已导入的模块中的函数
 print("1")
 pizza8_6.make_pizza(16, "pepperoni")
 pizza8_6.make_pizza(12, "mushrooms", "green peppers", "extra cheese")
