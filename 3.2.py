@@ -44,7 +44,7 @@ motorcycles = ["honda", "yamaha", "suzuki"]
 print(motorcycles)
 # 列表实例.pop(
 #     索引<整型数>: 仅限位置实参 | -1: 最后一个元素)
-# 返回列表实例中对应索引处的元素，原列表实例删除该元素，其后元素索引减一（前移一位）
+# 返回列表实例中对应索引处的元素，原列表实例删除该元素，原列表实例改变，原列表实例中该索引后的元素索引减一（前移一位）
 popped_motorcycle = motorcycles.pop()
 print(motorcycles)
 print(popped_motorcycle)
