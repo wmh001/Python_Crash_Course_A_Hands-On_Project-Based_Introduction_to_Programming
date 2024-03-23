@@ -17,14 +17,14 @@
 #     buffering=缓冲策略<整型数> | -1: 默认缓冲策略,
 #     ecoding=编码方式<字符串> | None: 平台默认编码,
 #     其他参数，均有默认值)
-# 返回按读取模式打开的文件路径对应的文件对象
+# 返回按读取模式打开的文件路径对应的文件实例
 # with 表达式 as 变量名:
 #     语句体
 # 先执行表达式的值的的__enter__函数，再将返回值赋给变量，然后执行语句，执行语句后执行执行表达式的值的的__exit__函数
-# 若表达式的值为文件对象，__enter__函数的返回值为文件对象本身，__exit__函数可以关闭文件并删除文件对象
+# 若表达式的值为文件实例，__enter__函数的返回值为文件实例本身，__exit__函数可以关闭文件并删除文件实例
 # 使用with语句打开文件可以防止文件未关闭
 with open("pi_digits10_1.txt") as file_object:
-    # 文件对象.read(
+    # 文件实例.read(
     #     一次最多可读取的字符数<整型数>: 仅限位置实参; 未给定或为负则读取所有内容 | None: 一次性读取所有内容)
     # 返回从文件读取的指定字符数的字符串
     contents = file_object.read()
@@ -56,7 +56,7 @@ with open("pi_digits10_1.txt") as file_object:
 # 另外，反斜杠"\"在Python字符串中还有转义符的功能，因此最好在字符串前加r，表示不转义的原始字符串
 
 # 10.1.3 逐行读取
-# 文件对象为可迭代对象，其每个元素为文件对应行的字符串
+# 文件实例为可迭代对象，其每个元素为文件对应行的字符串
 filename = "pi_digits10_1.txt"
 
 with open(filename) as file_object:
@@ -73,7 +73,7 @@ with open(filename) as file_object:
 filename = "pi_digits10_1.txt"
 
 with open(filename) as file_object:
-    # 文件对象.readlines(
+    # 文件实例.readlines(
     #     控制读取行数的参数<整型数>: 仅限位置实参; 未给定或为负则读取所有内容 | -1: 一次性读取所有内容)
     # 返回记录文件内容的列表，列表的元素为文件对应行的字符串
     lines = file_object.readlines()
