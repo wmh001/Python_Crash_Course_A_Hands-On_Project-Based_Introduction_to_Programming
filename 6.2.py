@@ -11,7 +11,7 @@ print("You just earned " + str(new_points) + " points!")
 
 # 6.2.2 添加键-值对
 # 字典实例[新键<>] = 新值<>
-# 在字典实例中添加新键值对
+# 在字典实例中添加新键值对，原字典实例改变
 print(alien_0)
 alien_0["x_position"] = 0
 alien_0["y_position"] = 25
@@ -29,7 +29,7 @@ print(alien_0)
 alien_0 = {"color": "green"}
 print("The alien is " + alien_0["color"] + ".")
 # 字典实例[已存在键<>] = 新值<>
-# 修改字典实例中已存在键对应的值
+# 修改字典实例中已存在键对应的值，原字典实例改变
 alien_0["color"] = "yellow"
 print("The alien is now " + alien_0["color"] + ".")
 
@@ -66,7 +66,7 @@ print("New x-position: " + str(alien_0["x_position"]))
 alien_0 = {"color": "green", "points": 5}
 print(alien_0)
 # del 字典实例[已存在键<>]
-# 删除字典实例中对应键的键值对
+# 删除字典实例中对应键的键值对，原字典实例改变
 del alien_0["points"]
 print(alien_0)
 
