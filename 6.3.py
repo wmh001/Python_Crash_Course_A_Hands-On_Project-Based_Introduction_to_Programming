@@ -68,8 +68,8 @@ for language in favorite_languages.values():
     print(language.title())
 
 # type(
-#     待检测变量<>: 不接收关键字实参 | 无默认值)
-# 返回待检测变量的类型
+#     待检测量<>: 不接收关键字实参 | 无默认值)
+# 返回待检测量的类型
 print(type(favorite_languages.values()))
 
 for language in sorted(favorite_languages.values()):
