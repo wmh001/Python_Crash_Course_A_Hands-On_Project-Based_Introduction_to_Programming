@@ -21,12 +21,12 @@
 # with 表达式 as 变量名:
 #     语句体
 # 先执行表达式的值的的__enter__函数，再将返回值赋给变量，然后执行语句，执行语句后执行执行表达式的值的的__exit__函数
-# 若表达式的值为文件实例，__enter__函数的返回值为文件实例本身，__exit__函数可以关闭文件并删除文件实例
+# 若表达式的值为文件实例，__enter__函数的返回值为文件实例本身，__exit__函数可以关闭并删除文件实例
 # 使用with语句打开文件可以防止文件未关闭
 with open("pi_digits10_1.txt") as file_object:
     # 文件实例.read(
     #     一次最多可读取的字符数<整型数>: 仅限位置实参; 未给定或为负则读取所有内容 | None: 一次性读取所有内容)
-    # 返回从文件读取的指定字符数的字符串
+    # 返回从文件实例读取的指定字符数的字符串
     contents = file_object.read()
     print(contents)
 
@@ -75,7 +75,7 @@ filename = "pi_digits10_1.txt"
 with open(filename) as file_object:
     # 文件实例.readlines(
     #     控制读取行数的参数<整型数>: 仅限位置实参; 未给定或为负则读取所有内容 | -1: 一次性读取所有内容)
-    # 返回记录文件内容的列表，列表的元素为文件对应行的字符串
+    # 返回记录文件实例内容的列表，列表的元素为文件实例对应行的字符串
     lines = file_object.readlines()
 
 for line in lines:
