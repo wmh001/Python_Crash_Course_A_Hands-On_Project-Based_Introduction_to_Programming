@@ -1,0 +1,5 @@
+__pycache__/
+programming*.txt
+*.json
+*/__pycache__/
+*.sqlite3
