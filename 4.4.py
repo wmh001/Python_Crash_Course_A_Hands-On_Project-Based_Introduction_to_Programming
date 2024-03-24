@@ -26,7 +26,7 @@ for player in players[:3]:
 # 4.4.3 复制列表
 my_food = ["pizza", "falafel", "carrot cake"]
 # 被复制列表实例<列表>[:]
-# 返回与被复制列表实例的元素和顺序相同的新列表实例
+# 返回新列表实例，其元素与被复制列表实例的元素相等并顺序相同
 friend_food = my_food[:]
 print("My favorite foods are:")
 print(my_food)
