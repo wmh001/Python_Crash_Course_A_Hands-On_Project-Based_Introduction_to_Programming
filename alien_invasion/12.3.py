@@ -53,6 +53,7 @@ def run_game():
         # pygame.QUIT：窗口关闭事件，当用户点击窗口的关闭按钮时触发
         # pygame.KEYDOWN：按键按下事件，当用户键盘的某个键按下时触发
         # pygame.KEYUP：按键松开事件，当用户键盘的某个键松开时触发
+        # pygame.MOUSEBUTTONDOWN：鼠标按键按下事件，当鼠标按键被按下时触发
 
         # 常用pygame定义的按键常量：
         # pygame.K_RIGHT：右方向键
