@@ -10,7 +10,7 @@ from settings12_3 import Settings
 
 def run_game():
     """运行游戏"""
-    # 初始化游戏并创建一个窗口对象
+    # 初始化游戏并创建一个窗口
     # pygame.init()
     # 初始化pygame的所有模块
     pygame.init()
