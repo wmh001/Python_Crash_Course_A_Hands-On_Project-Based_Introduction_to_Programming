@@ -90,13 +90,13 @@ while True:
     # matplotlib.pyplot.axes()
     # 返回在当前激活的figure窗口上新创建的空白轴域（坐标系，包括坐标轴及其标签、坐标刻度及其标签、坐标系内的图像等）axes实例
     ax = plt.axes()
-    # matplotlib.pyplot.axes实例.get_xais()
+    # matplotlib.pyplot.axes实例.get_xaxis()
     # 返回轴域实例的x轴axis实例属性
     # matplotlib.pyplot.axes.axis实例.set_visible(
     #     b=是否显示坐标轴实例<布尔>)
     # 显示或隐藏axis实例对应坐标轴的刻度及其标签
     ax.get_xaxis().set_visible(False)
-    # matplotlib.pyplot.axes实例.get_yais()
+    # matplotlib.pyplot.axes实例.get_yaxis()
     # 返回轴域实例的y轴axis实例属性
     ax.get_yaxis().set_visible(False)
     # 由于matplotlib.pyplot.axes()函数创建空白轴域会覆盖原图上，叠加在一起，因此该函数需要在绘图前运行
