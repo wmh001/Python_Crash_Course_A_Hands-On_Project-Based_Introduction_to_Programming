@@ -23,7 +23,7 @@ def run_game():
     # 将游戏所有的设置存储在一个类的实例中，方便管理
     ai_settings = Settings()
     # 窗口内的区域称为画布
-    # 在Pygame中，Surface实例是屏幕的一部分，用于显示游戏元素
+    # 在Pygame中，Pygame.Surface实例是屏幕的一部分，用于显示游戏元素
     # 窗口和游戏显示的其他元素各自都属于一个Surface实例
     # 窗口Surface实例在激活游戏的动画循环后，每经一轮循环都进行自动重绘
     # pygame.display.set_mode(
@@ -69,7 +69,7 @@ def run_game():
         # 每次循环时重绘屏幕
         # pygame.Surface实例.fill(
         #     color=填充颜色<三元组/四元组>: 颜色为RGB或RGBA格式,
-        #     rect=绘制位置<pygame.Rect类> | None: 表示填充整个Surface实例,
+        #     rect=绘制位置<pygame.Rect类> | 填充整个Surface实例,
         #     其他参数: 均有默认值)
         # 使用纯色依参数rect填充Surface实例上的矩形范围
         # 用颜色填充画布
