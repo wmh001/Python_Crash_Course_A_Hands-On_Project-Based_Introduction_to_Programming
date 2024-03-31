@@ -300,7 +300,7 @@ plt.axis([0, 1100, 0, 1100000])
 #     **kwargs: 接收数个关键字实参，均有默认值:
 #         fname=文件路径<字符串> | 与*args相同,
 #         dpi=分辨率<浮点数/matplotlib.figure.Figure类>: 浮点数单位为每英寸的像素点数; 接收matplotlib.figure.Figure类时
-#             将使用该图表的分辨率 | matplotlib.rcParams["savefig.dpi"],
+#             将使用该图表实例的分辨率 | matplotlib.rcParams["savefig.dpi"],
 #         quality=jpg/jpeg文件输出的质量<整型数>: 仅对jpg或jpeg文件生效;
 #             建议取值范围为1~95，超过100将会禁用jpeg压缩算法，可能会导致文件过大 | 95,
 #         facecolor=图表背景色<字符串>: 可选参数为matplotlib模块通用字符符号 | "auto": 使用当前图表实例的背景色,
