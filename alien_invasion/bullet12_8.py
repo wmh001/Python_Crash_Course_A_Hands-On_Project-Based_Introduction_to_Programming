@@ -4,7 +4,7 @@ import pygame
 from pygame.sprite import Sprite
 
 
-# pygame.sprite.Sprite子类（精灵）可将游戏中相关的元素编组（加入可迭代类pygame.sprite.Group类），进而统一操作编组中的所有元素
+# pygame.sprite.Sprite（精灵）子类可将游戏中相关的元素编组（加入可迭代类pygame.sprite.Group（编组）类），进而统一操作编组中的所有元素
 class Bullet(Sprite):
     """一个对飞船发射的子弹进行管理的类"""
 

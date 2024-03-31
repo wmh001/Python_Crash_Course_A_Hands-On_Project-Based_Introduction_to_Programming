@@ -8,7 +8,7 @@
 
 # 12.8.3 将子弹存储到编组中
 # 编组用于存储所有的子弹
-# pygame.sprite.Sprite类（精灵）可将游戏中相关的元素编组（加入pygame.sprite.Group类），进而同时操作编组中的所有元素
+# pygame.sprite.Sprite（精灵）类可将游戏中相关的元素编组（加入pygame.sprite.Group（编组）类），进而同时操作编组中的所有元素
 
 # 12.8.4 开火
 # 修改函数check_keydown_events()、check_events()、update_screen()
