@@ -20,7 +20,7 @@ class Button:
         #     size=字体大小<整型数> | 无默认值,
         #     bold=是否加粗<布尔> | False,
         #     italic=是否斜体<布尔> | False)
-        # 返回依据参数从系统字体库新创建的一个字体实例（pygame.font.Font实例）
+        # 返回依据参数从系统字体库新创建的一个pygame.font.Font（字体）实例
         self.font = pygame.font.SysFont(None, 48)
 
         # 创建按钮Rect实例，并使按钮居中
@@ -36,7 +36,7 @@ class Button:
         #     text=待绘制的文字<字符串>: 仅支持渲染一行文本，换行符不会被渲染 | 无默认值,
         #     antialias=是否抗锯齿<布尔> | 无默认值,
         #     color=文字颜色<三元组>: 颜色为RGB格式,
-        #     background=背景颜色<三元组>: 颜色RGB格式 | None: 表示透明)
+        #     background=背景颜色<三元组>: 颜色为RGB格式 | None: 表示透明)
         # 返回一个新创建的其上依据参数绘制有文本的Surface实例
         self.msg_image = self.font.render(msg, True, self.text_color, self.button_color)
         self.msg_image_rect = self.msg_image.get_rect()
