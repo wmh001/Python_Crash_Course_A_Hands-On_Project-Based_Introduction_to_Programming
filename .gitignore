@@ -3,4 +3,5 @@ programming*.txt
 *.json
 */__pycache__/
 data_visualization/squares_plot15_2.png
+data_visualization/die_visual*.svg
 *.sqlite3
