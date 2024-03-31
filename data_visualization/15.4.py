@@ -45,7 +45,7 @@ print(frequencies)
 # 15.4.6 绘制直方图
 # 对结果进行可视化
 # pygal.Bar(
-#     config=配置参数<pygal.Config类> | None: 默认配置,
+#     config=配置参数<pygal.config.Config类> | None: 默认配置,
 #     **kwargs: 接收数个关键字实参，均有默认值:
 #         style=图像样式<pygal.style.Style类>,
 #         x_label_rotation=x轴标签旋转角度<浮点数>: 与x轴夹角，顺时针为正 | 0,
@@ -59,20 +59,20 @@ print(frequencies)
 #     major_label_font_size迁移到Style类中，因此在参数config的属性中指定字体大小属性而在参数style中使用默认字体大小属性则指定无效
 # 条形图在浏览器中打开后有交互性，如鼠标指向条形时会显示其数据
 
-# pygal.Bar实例的常用属性：
+# pygal.graph.bar.Bar实例的常用属性：
 # title<字符串>：条形图的总标题
 # x_labels<一维列表>：数据横坐标也即x轴的次要刻度标签
 # x_title<字符串>：x轴标签
 # y_title<字符串>：y轴标签
-# config<pygal.Config类>：条形图的配置参数
+# config<pygal.config.Config（配置）类>：条形图的配置参数
 
-# pygal.Config实例的常用属性：
+# pygal.config.Config实例的常用属性：
 # x_label_rotation<浮点数>：x轴标签与x轴夹角，顺时针为正
 # show_legend<布尔>：是否显示左上角图例
 # truncate_label<整型数>；显示主要刻度标签的字数上限，超过上限的字以···代替，光标指向时显示全名
 # show_y_guides<布尔>：是否显示图像中的水平虚线和x轴
 # width<浮点数>：图像宽度
-# style<pygal.style.Style类>：样式，如颜色、字体大小等
+# style<pygal.style.Style（样式）类及其子类>：样式，如颜色、字体大小等
 
 # pygal.style.Style实例的常用属性：
 # title_font_size<浮点数>：图表标题字体大小
