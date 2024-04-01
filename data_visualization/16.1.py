@@ -21,7 +21,7 @@ with open(filename) as f:
     reader = csv.reader(f)
     # next(
     #     可迭代实例<迭代器>: 仅限位置实参 | 无默认值)
-    # 返回迭代器对象的下一个元素，第一次对某个文件实例调用时返回第一个元素
+    # 返回迭代器实例的下一个元素，第一次对某个可迭代实例调用时返回第一个元素
     header_row = next(reader)
     print(header_row)
 
@@ -82,7 +82,7 @@ plt.show()
 # datetime.datetime.strptime(
 #     字符串时间<字符串>: 仅限位置实参 | 无默认值,
 #     转换格式<字符串>: 仅限位置实参 | 无默认值)
-# 返回将传进来的字符串时间按照指定格式转换成datetime类型，
+# 返回将传进来的字符串时间按照指定格式转换成的datetime实例，
 #     字符串时间中与转换格式字符串中指令位置相同的字符串将为指令对应的datetime实例属性赋值
 # 转换格式可以不完整，没有指定的取默认值
 
@@ -218,7 +218,7 @@ plt.plot(dates, lows, c="blue", alpha=0.5)
 #         facecolor=填充颜色<字符串>: 可选参数为matplotlib模块通用字符符号 | "b",
 #         alpha=透明度<浮点数>: 用0~1浮点数表示 | 1,
 #         其他参数)
-# 在当前轴域中用颜色填充两条曲线之间的区域
+# 在当前轴域实例中用颜色填充两条曲线之间的区域
 plt.fill_between(dates, highs, lows, facecolor="blue", alpha=0.1)
 plt.title("Daily high and low temperatures - 2014", fontsize=24)
 plt.xlabel("", fontsize=16)
