@@ -154,6 +154,7 @@ plt.ylabel("Square of Value", fontsize=14)
 plt.tick_params(axis="both", labelsize=14)
 # matplotlib.pyplot.show()
 # 还没有窗口将新建窗口，将当前绘制的图表实例显示在该窗口中；已有窗口会用当前绘制的图表实例覆盖窗口内的图表实例
+# 执行后更新当前图表实例为新建的空白图表实例
 plt.show()
 
 # 15.2.2 校正图形
