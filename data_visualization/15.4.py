@@ -85,7 +85,7 @@ hist.x_labels = ["1", "2", "3", "4", "5", "6"]
 hist.x_title = "Result"
 hist.y_title = "Frequency of Result"
 
-# pygal.Bar实例.add(
+# pygal.graph.bar.Bar实例.add(
 #     title=图例标签<字符串> | 无默认值,
 #     values=数据<整型数列表/浮点数列表/字典列表>: 字典列表的元素格式为{"value": 纵坐标<浮点数/整型数>,
 #         "label": 默认工具提示外的工具提示, "xlink": 单击条形时跳转的链接, 其他键值对} | 无默认值,
@@ -93,7 +93,7 @@ hist.y_title = "Frequency of Result"
 # 在条形图实例上依数据绘制条形图
 # 条形图的工具提示为光标移动到条形上时出现的方框上显示的信息
 hist.add("D6", frequencies)
-# pygal.Bar实例.render_to_file(
+# pygal.graph.bar.Bar实例.render_to_file(
 #     filename=文件路径<字符串> | 无默认值
 #     *kwargs: 接收数个关键字实参，均有默认值)
 # 依文件路径将条形图实例保存为矢量图文件
