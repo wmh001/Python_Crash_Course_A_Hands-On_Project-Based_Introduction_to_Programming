@@ -7,4 +7,6 @@ data_visualization/squares_plot15_2.png
 data_visualization/die_visual*.svg
 收盘价*.svg
 收盘价*.html
+bar_descriptions*.svg
+python_repos*.svg
 *.sqlite3
