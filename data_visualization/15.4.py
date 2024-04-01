@@ -61,7 +61,7 @@ print(frequencies)
 
 # pygal.graph.bar.Bar实例的常用属性：
 # title<字符串>：条形图的总标题
-# x_labels<一维列表>：数据横坐标也即x轴的次要刻度标签
+# x_labels<一维列表>：数据横坐标也即x轴的刻度标签
 # x_title<字符串>：x轴标签
 # y_title<字符串>：y轴标签
 # config<pygal.config.Config（配置）类>：条形图的配置参数
@@ -77,7 +77,7 @@ print(frequencies)
 # pygal.style.Style实例的常用属性：
 # title_font_size<浮点数>：图表标题字体大小
 # label_font_size<浮点数>：次要刻度标签字体大小
-# major_label_font_size<浮点数>：主要刻度标签字体大小
+# major_label_font_size<浮点数>：主要刻度标签字体大小，对该属性进行手动设置后y轴出现主次刻度区分
 hist = pygal.Bar()
 
 hist.title = "Results of rolling one D6 1000 times."
