@@ -1,0 +1,24 @@
+<!--父模板-->
+{% extends "learning_logs/base.html" %}
+
+<!--父模板占位块的实现-->
+{% block content %}
+
+    <p>Topics: {{ topic }}</p>
+
+    <p>Entries:</p>
+
+    <!--条目罗列-->
+    <ul>
+        {% for entry in entries %}
+            <li>
+                <p>{{ entry.date_added|date:"M d, Y H:i" }}</p>
+                <p>{{ entry.text|linebreaks }}</p>
+            </li>
+        {% empty %}
+            <li>
+                There are no entries for this topic yet.
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

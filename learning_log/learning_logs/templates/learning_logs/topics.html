@@ -1,0 +1,22 @@
+<!--父模板-->
+{% extends "learning_logs/base.html" %}
+
+<!--父模板占位块的实现-->
+{% block content %}
+
+    <p>Topics</p>
+
+    <!--主题罗列-->
+    <ul>
+        {% for topic in topics %}
+            <li>
+                <p>
+                    <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+                </p>
+            </li>
+        {% empty %}
+            <li>No topics have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
