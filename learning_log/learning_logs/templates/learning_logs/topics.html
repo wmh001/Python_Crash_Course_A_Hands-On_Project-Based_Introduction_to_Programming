@@ -10,13 +10,24 @@
     <ul>
         {% for topic in topics %}
             <li>
+                <p>{{ topic.date_added|date:"M d, Y H:i" }}</p>
                 <p>
                     <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
                 </p>
+                <p>
+                    <!--修改主题-->
+                    <a href="{% url 'learning_logs:edit_topic' topic.id %}">Edit the topic</a>- - - - - - - - - - - - - - - - - - - - - - - - -
+                    <!--删除主题-->
+                    <a href="{% url 'learning_logs:delete_topic' topic.id %}">Delete the topic</a>
+                </p>
+
             </li>
         {% empty %}
             <li>No topics have been added yet.</li>
         {% endfor %}
     </ul>
+
+    <!--添加主题的超链接-->
+    <a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a>
 
 {% endblock content %}

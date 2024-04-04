@@ -1,0 +1,16 @@
+<!--父模板-->
+{% extends "learning_logs/base.html" %}
+
+<!--父模板占位块的实现-->
+{% block content %}
+    <p>Add a new topic:</p>
+
+    <form action="{% url 'learning_logs:new_topic' %}" method="post">
+        {% csrf_token %}
+        <!--django.forms.ModelForm子类实例.as_p
+        将Django表单所有元素渲染为段落格式，每个表单字段都会被包装在p（段落）标签中-->
+        {{ form.as_p }}
+        <button name="submit">add topic</button>
+    </form>
+
+{% endblock content %}

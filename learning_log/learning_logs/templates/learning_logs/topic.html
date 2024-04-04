@@ -8,12 +8,23 @@
 
     <p>Entries:</p>
 
+    <!--超链接到添加条目网页-->
+    <p>
+        <a href="{% url 'learning_logs:new_entry' topic.id %}">Add a new entry</a>
+    </p>
+
     <!--条目罗列-->
     <ul>
         {% for entry in entries %}
             <li>
                 <p>{{ entry.date_added|date:"M d, Y H:i" }}</p>
                 <p>{{ entry.text|linebreaks }}</p>
+                <p>
+                    <!--修改条目-->
+                    <a href="{% url 'learning_logs:edit_entry' entry.id %}">Edit the entry</a>- - - - - - - - - - - - - - - - - - - - - - - - -
+                    <!--删除条目-->
+                    <a href="{% url 'learning_logs:delete_entry' entry.id %}">Delete the entry</a>
+                </p>
             </li>
         {% empty %}
             <li>

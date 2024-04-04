@@ -1,0 +1,19 @@
+<!--父模板-->
+{% extends "learning_logs/base.html" %}
+
+<!--父模板占位块的实现-->
+{% block content %}
+
+    <!--显示主题，并超链接到显示主题所有条目的网页-->
+    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+
+    <p>Edit the entry:</p>
+
+    <!--显示表单-->
+    <form action="{% url 'learning_logs:edit_entry' entry.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">save changes</button>
+    </form>
+
+{% endblock content %}
