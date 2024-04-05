@@ -37,6 +37,8 @@ urlpatterns = [
     #     namespace=包含的URL条目的命名空间<字符串>: 用于与同项目中的其他URL区分开 |,
     #     其他参数: 均有默认值)
     # 剔除掉前面匹配到的部分后，将剩下的部分交给本函数中的另一个URLconf模块（urls.py）处理
+    # users的URL
+    url(r"^users/", include("users.urls", namespace="users")),
     # 空字符URL，即learning_logs的URL
     url(r"", include("learning_logs.urls", namespace="learning_logs")),
 ]

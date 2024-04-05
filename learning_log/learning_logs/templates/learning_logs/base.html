@@ -1,7 +1,19 @@
 <p>
     <!--项目名和“主题”独立成段，并带有到主页和显示所有主题的页面的超链接-->
     <a href="{% url 'learning_logs:index' %}">Learning Log</a> - 
-    <a href="{% url 'learning_logs:topics' %}">Topics</a> 
+    <a href="{% url 'learning_logs:topics' %}">Topics</a> - 
+    <!--
+        django.contrib.auth.models.User（用户）实例.is_authenticated()
+        django.contrib.auth.models.AnonymousUser（匿名用户）实例.is_authenticated()
+        返回表示用户是否登录的类似布尔的值
+    -->
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}.
+        <a href="{% url 'users:logout' %}">log out</a>
+    {% else %}
+        <a href="{% url 'users:register' %}">register</a> - 
+        <a href="{% url 'users:login' %}">log in</a>
+    {% endif %}
 </p>
 
 <!--块标签，用于占位，实际信息由子模板指定-->
