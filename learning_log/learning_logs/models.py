@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # 在这里创建模型
@@ -7,9 +8,9 @@ class Topic(models.Model):
     """用户学习的主题"""
 
     # django.db.models.CharField(
-    #     verbose_name=<str> | None,
-    #     name=<str> | None,
-    #     primary_key=<bool> |,
+    #     verbose_name=<字符串> | None,
+    #     name=<字符串> | None,
+    #     primary_key=<布尔> |,
     #     max_length=在数据库中预留多少空间<整型数>: 单位为字符 | None,
     #     其他参数: 均有默认值)
     # 返回依参数新创建的由字符或文本组成的数据CharField实例
@@ -23,6 +24,8 @@ class Topic(models.Model):
     #     其他参数: 均有默认值)
     # 返回依参数新创建的记录日期和时间的数据DateTimeField实例
     date_added = models.DateTimeField(auto_now_add=True)
+    # ForeignKey()函数详解加下
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # django.db.models.Model.__str__()
     # 指定在网页上有关模型默认显示为哪些数据即模型实例的字符串表示

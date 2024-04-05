@@ -1,5 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 
 # 在这里创建视图
@@ -23,19 +24,30 @@ def index(request):
     return render(request, "learning_logs/index.html")
 
 
+@login_required
 def topics(request):
     """显示所有主题"""
     # django.db.models.Model子类.objects.order_by(
     #     *field_names: 接收子类属性字段，以字符串表示; 依据该字段进行排序)
     # 返回模型的所有实例依模型的某个属性排序后的集合
-    topics = Topic.objects.order_by("date_added")
+    # topics = Topic.objects.order_by("date_added")
+    # django.db.models.Model子类.objects.filter(
+    #     *args,
+    #     **kwargs: 接收数个关键字实参，作为筛选条件，条件的格式为模型属性=目标值)
+    # 返回模型的所有实例中的符合条件的实例组成的集合，类型为django.db.models.manager.Manager.BaseManager（模型管理器）类
+    topics = Topic.objects.filter(owner=request.user).order_by("date_added")
     context = {"topics": topics}
     return render(request, "learning_logs/topics.html", context)
 
 
+@login_required
 def topic(request, topic_id):
     """显示特定主题全部条目"""
     topic = Topic.objects.get(id=topic_id)
+    if topic.owner != request.user:
+        # raise Http404
+        # 抛出404异常
+        raise Http404
     # django.db.models.Model实例1.[django.db.models.Model子类2小写名称]_set.order_by(
     #     用于排序的属性字段<字符串>: 以字符串表示; 字符串以-开头表示按降序排列)
     # 返回关联本模型实例1的所有模型2实例依模型2实例的某个属性排序后的集合
@@ -45,6 +57,7 @@ def topic(request, topic_id):
     return render(request, "learning_logs/topic.html", context)
 
 
+@login_required
 def new_topic(request):
     """添加新主题"""
     # django.http.resquest.HttpRequest（请求）实例常用属性：
@@ -96,7 +109,10 @@ def new_topic(request):
             #         False暂不存储到数据库内，之后手动随返回的模型实例一起保存，适用于模型实例需要修改后才存储的场景
             #         | True)
             # 返回新创建的存储填入表单的数据的表单所属模型的实例，并确定是否立即保存该实例到数据库
-            form.save()
+            # form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             # django.core.urlresolvers.reverse(
             #     viewname=URL别名<字符串>: "命名空间:URL别名" | None,
             #     urlconf,
@@ -113,9 +129,12 @@ def new_topic(request):
     return render(request, "learning_logs/new_topic.html", context)
 
 
+@login_required
 def new_entry(request, topic_id):
     """在特定主题添加新条目"""
     topic = Topic.objects.get(id=topic_id)
+    if topic.owner != request.user:
+        raise Http404
     if request.method != "POST":
         # 未提交条目时，创建新表单
         form = EntryForm()
@@ -135,9 +154,12 @@ def new_entry(request, topic_id):
     return render(request, "learning_logs/new_entry.html", context)
 
 
+@login_required
 def edit_topic(request, topic_id):
     """编辑主题"""
     topic = Topic.objects.get(id=topic_id)
+    if topic.owner != request.user:
+        raise Http404
     if request.method != "POST":
         # 未编辑主题时，创建表单，填入原条目
         form = TopicForm(instance=topic)
@@ -153,10 +175,13 @@ def edit_topic(request, topic_id):
     return render(request, "learning_logs/edit_topic.html", context)
 
 
+@login_required
 def edit_entry(request, entry_id):
     """编辑条目"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    if topic.owner != request.user:
+        raise Http404
     if request.method != "POST":
         # 未编辑条目时，创建表单，填入原条目
         form = EntryForm(instance=entry)
@@ -172,33 +197,45 @@ def edit_entry(request, entry_id):
     return render(request, "learning_logs/edit_entry.html", context)
 
 
+@login_required
 def delete_topic(request, topic_id):
     """删除主题的网页"""
     topic = Topic.objects.get(id=topic_id)
+    if topic.owner != request.user:
+        raise Http404
     context = {"topic": topic}
     return render(request, "learning_logs/delete_topic.html", context)
 
 
+@login_required
 def delete_topic_yes(request, topic_id):
     """确认删除主题"""
     topic = Topic.objects.get(id=topic_id)
+    if topic.owner != request.user:
+        raise Http404
     # django.db.models.Model子类实例.delete()
     # 删除模型实例
     topic.delete()
     return HttpResponseRedirect(reverse("learning_logs:topics"))
 
 
+@login_required
 def delete_entry(request, entry_id):
     """删除条目的网页"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    if topic.owner != request.user:
+        raise Http404
     context = {"entry": entry, "topic": topic}
     return render(request, "learning_logs/delete_entry.html", context)
 
 
+@login_required
 def delete_entry_yes(request, entry_id):
     """确认删除条目"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    if topic.owner != request.user:
+        raise Http404
     entry.delete()
     return HttpResponseRedirect(reverse("learning_logs:topic", args=[topic.id]))
