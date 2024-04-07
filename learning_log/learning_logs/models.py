@@ -17,10 +17,10 @@ class Topic(models.Model):
     # 用于模拟存储少量文本的数据，如名称、标题或城市
     text = models.CharField(max_length=200)
     # django.db.models.DateTimeField(
-    #     verbose_name=<str> | None,
-    #     name=<str> | None,
-    #     auto_now=<bool> |,
-    #     auto_now_add=是否在创建实例时自动设置为当前日期和时间 | True,
+    #     verbose_name=<字符串> | None,
+    #     name=<字符串> | None,
+    #     auto_now=<布尔> |,
+    #     auto_now_add=是否在创建实例时自动设置为当前日期和时间<布尔> | True,
     #     其他参数: 均有默认值)
     # 返回依参数新创建的记录日期和时间的数据DateTimeField实例
     date_added = models.DateTimeField(auto_now_add=True)
@@ -55,7 +55,7 @@ class Entry(models.Model):
     # django.db.models.TextField()
     # 返回依参数新创建的由不限制长度的大量文本组成的数据TextField实例
     text = models.TextField()
-    # 记录日期和时间的数据DateTimeField实例用于顺序显示条目和显示时间戳
+    # 记录日期和时间的数据DateTimeField实例用于确定显示条目的顺序和显示时间戳
     date_added = models.DateTimeField(auto_now_add=True)
 
     # 嵌套类的定义发生在外部类的定义内，可以像普通类一样定义属性和方法，并且可以被实例化和使用
