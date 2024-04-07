@@ -1,15 +1,23 @@
 <!--父模板-->
 {% extends "learning_logs/base.html" %}
 
+{% load bootstrap3 %}
+
 <!--父模板占位块的实现-->
+
+{% block header %}
+    <h2>注册一个账户。</h2>
+{% endblock header %}
+
 {% block content %}
-
     <!--填写用户名密码的表单-->
-    <form method="post" action="{% url 'users:register' %}">
+    <form method="post" action="{% url 'users:register' %}" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootstrap_form form %}
 
-        <button name="submit">register</button>
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">注册</button>
+        {% endbuttons %}
         <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
     </form>
 {% endblock content %}

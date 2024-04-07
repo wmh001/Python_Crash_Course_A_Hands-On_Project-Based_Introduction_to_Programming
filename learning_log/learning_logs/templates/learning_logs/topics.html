@@ -2,32 +2,31 @@
 {% extends "learning_logs/base.html" %}
 
 <!--父模板占位块的实现-->
-{% block content %}
+{% block header %}
+    <h1>主题</h1>
+{% endblock header %}
 
-    <p>Topics</p>
+{% block content %}
 
     <!--主题罗列-->
     <ul>
         {% for topic in topics %}
             <li>
-                <p>{{ topic.date_added|date:"M d, Y H:i" }}</p>
-                <p>
+                <h4>{{ topic.date_added|date:"Y年 M d日，H:i" }}</h4>
+                <h3>
                     <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
-                </p>
-                <p>
+                </h3>
+                <h4>
                     <!--修改主题-->
-                    <a href="{% url 'learning_logs:edit_topic' topic.id %}">Edit the topic</a>- - - - - - - - - - - - - - - - - - - - - - - - -
+                    <a href="{% url 'learning_logs:edit_topic' topic.id %}">编辑主题</a>- - - - - - - - - - - - - - - - - - - - - - - - -
                     <!--删除主题-->
-                    <a href="{% url 'learning_logs:delete_topic' topic.id %}">Delete the topic</a>
-                </p>
-
+                    <a href="{% url 'learning_logs:delete_topic' topic.id %}">删除主题</a>
+                </h4>
             </li>
         {% empty %}
-            <li>No topics have been added yet.</li>
+            <li>还没有添加主题。</li>
         {% endfor %}
     </ul>
-
     <!--添加主题的超链接-->
-    <a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a>
-
+    <h3><a href="{% url 'learning_logs:new_topic' %}">添加一个新主题</a></h3>
 {% endblock content %}

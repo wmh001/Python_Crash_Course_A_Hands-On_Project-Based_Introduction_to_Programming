@@ -1,20 +1,26 @@
 <!--父模板-->
 {% extends "learning_logs/base.html" %}
 
-<!--父模板占位块的实现-->
-{% block content %}
+{% load bootstrap3 %}
 
-    <!--表单填写不合规-->
-    {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
+<!--父模板占位块的实现-->
+
+{% block header %}
+    <h2>登录你的账户。</h2>
+{% endblock header %}
+
+{% block content %}
+    <!--表单填写不合规由django-bootstrap3自动管理-->
 
     <!--填写密码的表单-->
-    <form method="post" action="{% url 'users:login' %}">
+    <form method="post" action="{% url 'users:login' %}" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootstrap_form form %}
 
-        <button name="submit">log in</button>
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">登录</button>
+        {% endbuttons %}
+
         <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
     </form>
 {% endblock content %}

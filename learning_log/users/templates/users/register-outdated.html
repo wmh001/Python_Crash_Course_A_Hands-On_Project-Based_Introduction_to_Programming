@@ -1,0 +1,15 @@
+<!--父模板-->
+{% extends "learning_logs/base.html" %}
+
+<!--父模板占位块的实现-->
+{% block content %}
+
+    <!--填写用户名密码的表单-->
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button name="submit">register</button>
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
+{% endblock content %}

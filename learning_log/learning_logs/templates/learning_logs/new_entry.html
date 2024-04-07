@@ -1,19 +1,29 @@
 <!--父模板-->
 {% extends "learning_logs/base.html" %}
 
+{% load bootstrap3 %}
+
 <!--父模板占位块的实现-->
+{% block header %}
+    <h2>
+        <!--显示主题，并超链接到显示主题所有条目的网页-->
+        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+    </h2>
+    <h3>
+        添加一个新条目：
+    </h3>
+{% endblock header %}
+
 {% block content %}
 
-    <!--显示主题，并超链接到显示主题所有条目的网页-->
-    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
-
-    <p>Add a new entry:</p>
-
     <!--显示表单-->
-    <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post">
+    <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">add entry</button>
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">添加该条目</button>
+        {% endbuttons %}
     </form>
 
 {% endblock content %}

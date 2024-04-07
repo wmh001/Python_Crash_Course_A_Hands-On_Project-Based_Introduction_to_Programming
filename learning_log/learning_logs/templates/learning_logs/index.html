@@ -2,8 +2,17 @@
 {% extends "learning_logs/base.html" %}
 
 <!--父模板占位块的实现-->
+{% block header %}
+    <div class="jumbotron">
+        <h1>跟踪您的学习情况。</h1>
+    </div>
+{% endblock header %}
+
 {% block content %}
-<p>
-    Learning Log helps you keep track of your learning, for any topic you're learning about.
-</p>
+    <h2>
+        <a href="{% url 'users:register' %}">注册一个账户</a>来记录您自己的学习日志，并列出您正在学习的主题。
+    </h2>
+    <h2>
+        每当你了解到某个主题的新内容时，就添加一个条目以总结你学到的东西。
+    </h2>
 {% endblock content %}

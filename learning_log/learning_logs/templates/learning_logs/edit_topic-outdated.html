@@ -1,0 +1,16 @@
+<!--父模板-->
+{% extends "learning_logs/base.html" %}
+
+<!--父模板占位块的实现-->
+{% block content %}
+
+    <p>Edit the topic:</p>
+
+    <!--显示表单-->
+    <form action="{% url 'learning_logs:edit_topic' topic.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">save changes</button>
+    </form>
+
+{% endblock content %}

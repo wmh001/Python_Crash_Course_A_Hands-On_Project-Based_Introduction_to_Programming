@@ -32,6 +32,7 @@ def register(request):
         # 提交信息后，对数据进行处理，并返回主页
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
+            # 保存账户
             new_user = form.save()
             # 登录账户
             # django.contrib.auth.authenticate(
